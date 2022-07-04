@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { HashRouter, BrowserRouter, Routes, Route, Link, NavLink } from 'react-router-dom';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
 
@@ -36,9 +36,9 @@ function App() {
     <div>
       <h1>Hello React Router Dom</h1>
       <ul>
-        <li><a href="/">HOME</a></li>
-        <li><a href="/topics">TOPICS</a></li>
-        <li><a href="/contact">CONTACT</a></li>
+        <li><NavLink to='/'>HOME</NavLink></li>
+        <li><NavLink to='/topics'>TOPICS</NavLink></li>
+        <li><NavLink to='/contact'>CONTACT</NavLink></li>
       </ul>
       <Routes>
         <Route exact path="/" element={<Home />} />
@@ -51,6 +51,11 @@ function App() {
 }
 
 //ReactDOM.render(<App />, document.getElementById('root'));
-ReactDOM.render(<BrowserRouter><App /></BrowserRouter>, document.getElementById('root'));
+
+//<BrowserRouter>
+// ReactDOM.render(<BrowserRouter><App /></BrowserRouter>, document.getElementById('root'));
+
+//<HashRouter> 
+ReactDOM.render(<HashRouter><App /></HashRouter>, document.getElementById('root'));
 
 reportWebVitals();
